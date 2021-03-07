@@ -1,0 +1,17 @@
+{
+	"name": "Immoweb Filter",
+	"version": "1.0",
+	"description": "Retire les propriétés à vendre mais déjà \"sous option\" ou \"sous compromis\" des résultats de recherche.",
+	"manifest_version": 2,
+	"browser_action": {
+		"default_icon": "favicon-32x32.png",
+		"default_popup": "popup.html"
+	},
+	"content_scripts": [
+		{
+			"matches": ["https://www.immoweb.be/*"],
+			"js": ["content.js"]
+		}
+	],
+	"permissions": ["activeTab", "storage"]
+}

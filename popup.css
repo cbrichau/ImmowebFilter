@@ -1,0 +1,64 @@
+body {
+	width: 300px;
+	background: #fff;
+	font-size: 15px;
+}
+
+h1 {
+	margin: 0;
+	padding: 10px 0;
+	background: #62c2f3;
+	border: none;
+	border-radius: 3px;
+	text-align: center;
+	color: #fff;
+	font-size: 20px;
+}
+
+form {
+	padding: 10px 25px;
+}
+
+p {
+	position: relative;
+	margin: 20px 0;
+	padding-left: 40px;
+	font-family: arial;
+}
+
+input[type="radio"] {
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 0;
+}
+
+input[type="radio"]+label span {
+	appearance: none;
+	z-index: 20;
+	position: absolute;
+	top: -3px;
+	left: 0;
+	display: inline-block;
+	width: 24px;
+	height: 24px;
+	border-radius: 50%;
+	cursor: pointer;
+	vertical-align: middle;
+	box-shadow: hsla(0, 0%, 100%, .15) 0 1px 1px, inset hsla(0, 0%, 0%, .5) 0 0 0 1px;
+	background: #efefef;
+	background-image: radial-gradient(ellipse at center, #62c2f3 0%, #62c2f3 40%, #efefef 45%);
+	background-repeat: no-repeat;
+	background-position: -24px 0;
+	transition: background-position .15s cubic-bezier(.8, 0, 1, 1);
+}
+
+input[type="radio"]:checked+label span {
+	background-position: 0 0;
+	transition: background-position .2s .15s cubic-bezier(0, 0, .2, 1);
+}
+
+label {
+	cursor: pointer;
+}
