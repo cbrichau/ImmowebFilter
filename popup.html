@@ -1,27 +1,27 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<title>Immoweb Filter</title>
 	<link rel="stylesheet" href="popup.css">
 </head>
+
 <body>
 	<h1>Immoweb Filter</h1>
 	<form>
 		<p>
-			<input type="radio" name="mode" id="highlight" checked />
+			<input type="radio" name="displayMode" id="highlight" />
 			<label for="highlight"><span></span> Highlight availability</label>
 		</p>
 		<p>
-			<input type="radio" name="mode" id="hide" />
+			<input type="radio" name="displayMode" id="hide" />
 			<label for="hide"><span></span> Hide unavailable propeties</label>
 		</p>
 		<p>
-			<input type="radio" name="mode" id="original" />
-			<label for="original"><span></span> Do nothing</label>
+			<input type="radio" name="displayMode" id="original" />
+			<label for="original"><span></span> View original page</label>
 		</p>
 	</form>
-
-
 	<script src="popup.js"></script>
 </body>
 
