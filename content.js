@@ -3,12 +3,12 @@ var displayMode;
 var offMarketKeywords = [
 	'sous option', 'onder optie', 'in optie', 'under option',
 	'sous offre', 'onder aanbod', 'under offer',
-	'offre acceptee',
-	'offre acceptée',
+	'offre acceptee', 'offre acceptée', 'offer accepted',
 	'sous compromis',
-	'fin des visites', 'einde van de bezoeken', 'stop bezoek',
+	'fin des visites', 'einde van de bezoeken', 'end of visits',
 	'visites indisponibles', 'geen bezoek',
-	'vendu', 'verkocht',
+	'stop bezoek', 'stop visit',
+	'vendu', 'verkocht', 'sold',
 ];
 
 // Reads the property's description and checks if it contains terms from offMarketKeywords.
@@ -31,7 +31,9 @@ function hasOffMarketTag(property)
 	let tagNodes = property.querySelectorAll('.flag-list__text');
 	let tagArray = [].slice.call(tagNodes);
 	let tags = tagArray.map(function (tag) { return tag.innerText.toLowerCase().trim(); });
-	if (tags.includes('sous option') || tags.includes('onder optie'))
+	if (tags.includes('sous option') ||
+			tags.includes('onder optie') ||
+			tags.includes('under option'))
 		return true;
 	return false;
 }
@@ -65,7 +67,7 @@ function triggerVisibilityUpdate()
 }
 
 // MAIN
-if (location.href.match(/(\/fr\/recherche\/.*\/a-vendre)|(\/nl\/zoeken\/.*\/te-koop\/)/g))
+if (location.href.match(/(\/fr\/recherche\/.*\/a-vendre)|(\/nl\/zoeken\/.*\/te-koop)|(\/en\/search\/.*\/for-sale)/g))
 {
 	// Gets the displayMode selected in the popup.
 	chrome.storage.local.get('displayMode', function (fetched)
@@ -82,25 +84,8 @@ if (location.href.match(/(\/fr\/recherche\/.*\/a-vendre)|(\/nl\/zoeken\/.*\/te-k
 			{
 				if (mutation.target.style.opacity === '1')
 					triggerVisibilityUpdate();
-				/*
-				if (mutation.type === 'attributes' && mutation.attributeName == 'id')
-				{
-					if (mutation.target.id.startsWith('classified_'))
-						defineVisibility(mutation.target);
-					else if (mutation.target.id.startsWith('cardMediaContainer-') &&
-									mutation.target.parentNode.parentNode.parentNode.id.startsWith('classified_'))
-						defineVisibility(mutation.target.parentNode.parentNode.parentNode);
-					// else if (mutation.target.id.startsWith('lazy-loading-observer-wrapper'))
-					// 	defineVisibility(mutation.target.parentNode);
-				}
-				else if (mutation.type === 'childList' &&
-								mutation.target.className == 'search-results__item' &&
-								(property = mutation.target.querySelector('article[id^="classified_"]')) != null)
-					defineVisibility(property);
-				*/
 			});
-		});
-		//observer.observe(resultsList, { attributes: true, attributeFilter: [ 'id' ], childList: true, subtree: true });	
+		});	
 		observer.observe(resultsList, { attributes: true });	
 	});
 }

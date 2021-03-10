@@ -1,7 +1,5 @@
 # ImmowebFilter
 
-This chrome extension filters properties for sale on immoweb.be.
+Immoweb.be is Belgium's digital real estate leader for houses, apartments and other properties for sale. Unfortunately, these properties often remain on the platform after they've been sold (or placed under option) which makes the site frustrating and time-consuming to go through.
 
-It allows the user to choose between:
-- highlighting (un)available properties in red(green)
-- hiding unavailable properties altogether.
+The Immoweb Filter extension solves this issue by highlighting properties' availability or by hiding the unavailable ones altogether (your choice).
