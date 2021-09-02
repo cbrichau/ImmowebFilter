@@ -50,6 +50,23 @@ hover
 	background-color:#bc3315;
 */
 
+// Calls the previous functions to check the property's availability then
+// changes its display based on the displayMode selected in the popup.
+function defineVisibility(property)
+{
+	let isOffMarket = (hasOffMarketDescription(property) || hasOffMarketTag(property));
+
+	if (displayMode == 'highlight')
+		property.style.backgroundColor = (isOffMarket ? '#FDD5C1' : '#CBF8CB');
+	else if (displayMode == 'hide')
+	{
+		if (isOffMarket)
+			property.style.display = 'none';
+		else
+			property.style = '';
+	}
+}
+
 function addButtons(property)
 {
   var logo = property.querySelector('.card__logo-container.card--result__logo-container');
@@ -90,32 +107,14 @@ function addButtons(property)
   buttonsBox.appendChild(hideButton);
 }
 
-// Calls the previous functions to check the property's availability then
-// changes its display based on the displayMode selected in the popup.
-function defineVisibilityAndAddButtons(property)
-{
-	let isOffMarket = (hasOffMarketDescription(property) || hasOffMarketTag(property));
-
-	if (displayMode == 'highlight')
-		property.style.backgroundColor = (isOffMarket ? '#FDD5C1' : '#CBF8CB');
-	else if (displayMode == 'hide')
-	{
-		if (isOffMarket)
-			property.style.display = 'none';
-		else
-			property.style = '';
-	}
-	
-	addButtons(property);
-}
-
 // Waits a second before looping over the loaded properties and adjusting their display.
 function triggerPageElementsUpdate()
 {
 	setTimeout(function()
 	{
 		resultsList.querySelectorAll('[id^="classified_"]').forEach(property => {
-			defineVisibilityAndAddButtons(property);
+			defineVisibility(property);
+			addButtons(property);
 		});
 	}, 1500);
 }
