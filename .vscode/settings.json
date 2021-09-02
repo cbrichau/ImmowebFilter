@@ -1,0 +1,75 @@
+{
+	/*
+	There are 4 levels of settings in VSCode, each overriding the previous:
+	1) Default: Applies to everything in all instances of VSCode.
+	2) User: Applies to everything in all instances of VSCode, for that user.
+	3) Workspace: Applies to all the projects in the workspace.
+	4) Folder: Applies to all the contents of the folder.
+
+	Users CAN customize their environment with the User and/or Workspace settings.
+	They CANNOT override the shared Folder settings which is the same for the whole team.
+	*/
+
+	/* ************************************************************************************* *\
+		SELECTED FORMATTERS
+		All users must install these extensions.
+	\* ************************************************************************************* */
+
+	"[css]": {
+		"editor.defaultFormatter": "HookyQR.beautify"
+	},
+	"[html]": {
+		"editor.defaultFormatter": "HookyQR.beautify",
+	},
+	"[javascript]": {
+		"editor.defaultFormatter": "HookyQR.beautify",
+	},
+	"[php]": {
+		"editor.defaultFormatter": "bmewburn.vscode-intelephense-client",
+	},
+	
+	// Beautify default settings: https://github.com/HookyQR/VSCodeBeautify/blob/master/Settings.md
+	// Beautify custom settings: defined in .jsbeautifyrc)
+
+	"editor.formatOnSave": true,
+
+	/* ************************************************************************************* *\
+		JavaScript & TypeScript custom settings
+	\* ************************************************************************************* */
+
+	// Controls whether a space is added between the function keyword and its parenthese, i.e. 'function_()'.
+	"javascript.format.insertSpaceAfterFunctionKeywordForAnonymousFunctions": false,
+	"typescript.format.insertSpaceAfterFunctionKeywordForAnonymousFunctions": false,
+	
+	// Controls whether a space is added after opening and before closing empty braces.
+	"javascript.format.insertSpaceAfterOpeningAndBeforeClosingEmptyBraces": false,
+	"typescript.format.insertSpaceAfterOpeningAndBeforeClosingEmptyBraces": false,
+	
+	// Controls whether a space is added after opening and before closing non-empty braces.
+	"javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": false,
+	"typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": false,
+
+	// Controls whether a space is added between a function name and its parentheses, i.e. 'function name_()'.
+	"javascript.format.insertSpaceBeforeFunctionParenthesis": false,
+	"typescript.format.insertSpaceBeforeFunctionParenthesis": false,
+
+	// Controls whether an open brace is put onto a new line for control blocks or not.
+	"javascript.format.placeOpenBraceOnNewLineForControlBlocks": true,
+	"typescript.format.placeOpenBraceOnNewLineForControlBlocks": true,
+
+	// Controls whether an open brace is put onto a new line for functions or not.
+	"javascript.format.placeOpenBraceOnNewLineForFunctions": true,
+	"typescript.format.placeOpenBraceOnNewLineForFunctions": true,
+
+	/* ************************************************************************************* *\
+		Spaces & indentation custom settings.
+	\* ************************************************************************************* */
+
+	"diffEditor.ignoreTrimWhitespace": false,// When enabled, the diff editor ignores changes in leading or trailing whitespace.
+	"diffEditor.wordWrap": "off",// Lines will never wrap.
+	"editor.comments.insertSpace": true,// Controls whether a space character is inserted when commenting.
+	"editor.detectIndentation": false,// Controls whether editor.tabSize and editor.insertSpaces are automatically set based on the file contents.
+	"editor.insertSpaces": false,// Controls whether pressing Tab inserts spaces instead.
+	"editor.tabSize": 2,// The number of spaces a tab is equal to.
+	"editor.trimAutoWhitespace": true,// Remove trailing auto inserted whitespace.
+}

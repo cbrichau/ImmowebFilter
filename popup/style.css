@@ -34,7 +34,7 @@ input[type="radio"] {
 	z-index: 0;
 }
 
-input[type="radio"]+label span {
+input[type="radio"]+label span.checkboxSlider {
 	appearance: none;
 	z-index: 20;
 	position: absolute;
@@ -54,7 +54,7 @@ input[type="radio"]+label span {
 	transition: background-position .15s cubic-bezier(.8, 0, 1, 1);
 }
 
-input[type="radio"]:checked+label span {
+input[type="radio"]:checked+label span.checkboxSlider {
 	background-position: 0 0;
 	transition: background-position .2s .15s cubic-bezier(0, 0, .2, 1);
 }

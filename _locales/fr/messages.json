@@ -1,6 +1,17 @@
 {
-  "appDesc": {
-    "message": "Immmoweb Filter met en évidence la disponibilité des propriétés listées sur Immoweb.be ou masque complètement celles indisponibles.",
-    "description": "Immoweb.be est le leader digital de l'immobilier belge pour les maisons, appartements et autres propriétés à vendre. Malheureusement, ces propriétés restent souvent sur le site après avoir été vendues (ou placées sous option), ce qui rend le site frustrant et long à parcourir. L'extension Immoweb Filter résout ce problème en mettant en évidence la disponibilité des propriétés ou en masquant complètement celles indisponibles (à vous de choisir)."
-  }
+  "appTitle": {
+    "message": "Trouvez un bien facilement et rapidement sur immoweb.be avec IMMOWEB+"
+  },
+	"appDescription": {
+    "message": "Immoweb.be est le plus grand site immobilier de Belgique et le seul qui compte pour de nombreux Belges. C'est un site génial, mais pas parfait. Nous avons donc créé IMMOWEB+ pour trouver simplement et rapidemment le bon bien."
+  },
+	"popupOptionHighlight": {
+		"message": "Marquer la disponibilité"
+	},
+	"popupOptionHide": {
+		"message": "Cacher les biens indisponibles"
+	},
+	"popupOptionViewOriginal": {
+		"message": "Voir la page d'origine"
+	}
 }

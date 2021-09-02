@@ -1,18 +1,20 @@
 {
-	"name": "Immoweb Filter",
-  "description": "__MSG_appDesc__",
+	"name": "IMMOWEB+",
+  "description": "__MSG_appTitle__",
+	"version": "2.0",
+	"manifest_version": 3,
   "default_locale": "fr",
-	"version": "1.0",
-	"manifest_version": 2,
-	"browser_action": {
-		"default_icon": "favicon-32x32.png",
-		"default_popup": "popup.html"
+	"permissions": ["storage"],
+	"action": {
+		"default_icon": "houseIcon-32x32.png",
+		"default_popup": "popup/index.html"
 	},
 	"content_scripts": [
 		{
 			"matches": ["https://www.immoweb.be/*"],
-			"js": ["content.js"]
+			"css": ["content/style.css"],
+			"js": ["content/script.js"]
 		}
 	],
-	"permissions": ["storage"]
+	"web_accessible_resources": [{"resources":["content/style.css"], "matches": ["https://www.immoweb.be/*"]}]
 }

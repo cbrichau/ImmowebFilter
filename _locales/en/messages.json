@@ -1,5 +1,17 @@
 {
-  "appDesc": {
-    "message": "Immmoweb Filter highlights the availability of properties listed on Immoweb.be or completely hides those that aren't available."
-  }
+  "appTitle": {
+    "message": "Find your next property the quick & easy way on immoweb.be with IMMOWEB+"
+  },
+	"appDescription": {
+    "message": "Immoweb.be is Belgium's biggest real estate website and the only one that matters to many Belgians. It's great, but it's not perfect. So we created IMMOWEB+ to make it easier and quicker to find the right property."
+  },
+	"popupOptionHighlight": {
+		"message": "Highlight availability"
+	},
+	"popupOptionHide": {
+		"message": "Hide unavailable propeties"
+	},
+	"popupOptionViewOriginal": {
+		"message": "View original page"
+	}
 }
