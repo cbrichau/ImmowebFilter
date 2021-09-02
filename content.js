@@ -107,6 +107,36 @@ function addButtons(property)
   buttonsBox.appendChild(hideButton);
 }
 
+function addPostIt(property)
+{
+	var notesPostIt = document.createElement('div');
+	notesPostIt.style.position = 'absolute';
+	notesPostIt.style.top = '0rem';
+	notesPostIt.style.right = '0rem';
+	notesPostIt.style.zIndex = '99999';
+	notesPostIt.style.width = '25rem';
+	notesPostIt.style.height = '12rem';
+	notesPostIt.style.padding = '1rem';
+	notesPostIt.style.backgroundColor = '#FFFC7F';
+	notesPostIt.style.boxShadow = '5px 5px 7px rgba(33, 33, 33, 0.7)';
+	notesPostIt.style.cursor = 'text';
+	notesPostIt.contentEditable = true;
+	property.appendChild(notesPostIt);
+	
+	var closeX = document.createElement('div');
+	closeX.style.position = 'absolute';
+	closeX.style.top = '0.3rem';
+	closeX.style.right = '0.5rem';
+	closeX.style.zIndex = '999999';
+	closeX.style.width = '2rem';
+	closeX.style.height = '2rem';
+	closeX.style.cursor = 'pointer';
+	closeX.style.textAlign = 'right';
+	closeX.style.fontWeight = 'bold';
+	closeX.innerHTML = 'X';
+	notesPostIt.appendChild(closeX);
+}
+
 // Waits a second before looping over the loaded properties and adjusting their display.
 function triggerPageElementsUpdate()
 {
@@ -115,6 +145,7 @@ function triggerPageElementsUpdate()
 		resultsList.querySelectorAll('[id^="classified_"]').forEach(property => {
 			defineVisibility(property);
 			addButtons(property);
+			addPostIt(property);
 		});
 	}, 1500);
 }
