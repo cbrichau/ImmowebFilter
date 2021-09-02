@@ -1,11 +1,11 @@
 var resultsList = document.querySelector('ul#main-content');
 var displayMode;
 var offMarketKeywords = [
-	'sous option', 'onder optie', 'in optie', 'under option',
+	'sous option', 'onder optie', 'in optie', 'under option', 'option',
 	'sous offre', 'onder aanbod', 'under offer',
 	'offre acceptee', 'offre acceptée', 'offer accepted',
-	'sous compromis',
-	'fin des visites', 'einde van de bezoeken', 'end of visits',
+	'sous compromis', 'compromis',
+	'fin des visites', 'visites suspendues', 'einde van de bezoeken', 'end of visits',
 	'visites indisponibles', 'geen bezoek',
 	'stop bezoek', 'stop visit',
 	'vendu', 'verkocht', 'sold',
